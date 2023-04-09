@@ -27,16 +27,18 @@ ADAS-systemet kan därmed realiseras via följande ekvation:
 
 Sanningstabellen för ADAS-systemet visas nedan (X = don't care, dvs. signalens värde spelar ingen roll):
 
-driver_break camera radar adas_ok engine_break
-      0         0     0      0         0
-      0         0     0      1         0
-      0         0     1      0         0
-      0         0     1      1         0
-      0         1     0      0         0
-      0         1     0      1         0
-      0         1     1      0         0
-      0         1     1      1         1
-      1         x     x      x         1
+
+| driver_break | camera | radar | adas_ok | engine_break |
+| ------------ | ------ | ----- | ------- | ------------ |
+|      0       |  0     |   0   |    0    |       0      |
+|      0       |  0     |   0   |    1    |       0      |
+|      0       |  0     |   1   |    0    |       0      |
+|      0       |  0     |   1   |    1    |       0      |
+|      0       |  1     |   0   |    0    |       0      |
+|      0       |  1     |   0   |    1    |       0      |
+|      0       |  1     |   1   |    0    |       0      |
+|      0       |  1     |   1   |    1    |       1      |
+|      1       |  x     |   x   |    x    |       1      |
 
 
 Filen "adas_net.png" demonstrerar grindnätet realiserat via CircuitVerse.
