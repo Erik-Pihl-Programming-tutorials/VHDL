@@ -29,7 +29,7 @@ Sanningstabellen för ADAS-systemet visas nedan (X = don't care, dvs. signalens 
 
 
 | driver_break | camera | radar | adas_ok | engine_break |
-| ------------ | ------ | ----- | ------- | ------------ |
+| :----------: | :----: | :---: | :-----: | :----------: |
 |      0       |  0     |   0   |    0    |       0      |
 |      0       |  0     |   0   |    1    |       0      |
 |      0       |  0     |   1   |    0    |       0      |
