@@ -47,8 +47,8 @@ VHDL kan motsvarande funktionalitet implementeras via en utsignal.
 
 En procedurdeklaration har följande syntax:
 
-procedure namn(var/constant/signal arg1: in/out/inout datatyp;
-               var/constant/signal arg2: in/out/inout datatyp);
+procedure namn(variable/constant/signal arg1: in/out/inout datatyp;
+               variable/constant/signal arg2: in/out/inout datatyp);
 
 Som exempel, en procedur döpt add som lagrar summan av två 8-bitars osignerade tal x och y via utsignalen sum kan deklareras enligt nedan:
 
