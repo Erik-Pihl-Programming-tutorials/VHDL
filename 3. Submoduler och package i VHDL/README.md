@@ -239,7 +239,7 @@ constant DISPLAY_C  : std_logic_vector(6 downto 0) := "1000110";\
 constant DISPLAY_D  : std_logic_vector(6 downto 0) := "0100001";\
 constant DISPLAY_E  : std_logic_vector(6 downto 0) := "0000110";\
 constant DISPLAY_F  : std_logic_vector(6 downto 0) := "0001110";\
-constant DISPLAY_OFF: std_logic_vector(6 downto 0) := "1111111";\
+constant DISPLAY_OFF: std_logic_vector(6 downto 0) := "1111111";
 
 Filen "misc.vhd" innehåller deklaration samt definition av diverse funktioner- och procedurer samt konstanter.
 
