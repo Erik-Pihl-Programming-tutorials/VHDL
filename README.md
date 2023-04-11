@@ -249,7 +249,5 @@ och summan samt differensen av inmatade siffror beräknas via funktionsanrop.
 Filen "multi_hex.qar" utgör en arkiverad version av konstruktionen med all kod implementerad och
 hårdvara konfigurerad för FPGA-kort Terasic DE0. 
 
-Filen "DE0 User Manual.pdf" utgör manualen för FPGA-kortet Terasic DE0.
-
 Se video tutorial här:
 https://youtu.be/hPkxAD5WkKk
