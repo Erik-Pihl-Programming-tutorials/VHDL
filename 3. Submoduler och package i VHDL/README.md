@@ -8,8 +8,8 @@ man vill inkludera, medan man i C enbart kan begränsa detta via makron, annars 
 Funktioner fungerar på samma sätt i C, med skillnaden att syntaxen är annorlunda samt att funktioner måste returnera ett värde.
 En funktionsdeklaration har följande syntax:
 
-function namn(variable/constant/signal arg1: datatyp;
-              variable/constant/signal arg2: datatyp)
+function namn(variable/constant/signal arg1: datatyp;\
+              variable/constant/signal arg2: datatyp)\
 return returtyp;
 
 Ingående argument kan väljas mellan att sättas till variabler, konstanter och signaler. 
@@ -18,27 +18,27 @@ vilket rekommenderas ifall värdet för ett givet ingående argument inte ska ä
 
 Som exempel, en funktion döpt add som returnerar summan av två 8-bitars osignerade tal x och y kan deklareras enligt nedan:
 
-function add(constant x, y: natural range 0 to 255)
+function add(constant x, y: natural range 0 to 255)\
 return natural;
 
 Eftersom x och y har samma datatyp kan de deklareras direkt med ett kommatecken dem emellan.
 
 Motsvarande funktionsdefinition visas nedan:
 
-function add(constant x, y: natural range 0 to 255)
-return natural is
-begin
-    return x + y;
+function add(constant x, y: natural range 0 to 255)\
+return natural is\
+begin\
+    return x + y;\
 end function;
 
 I den deklarativa delen av funktionen (innan nyckelordet begin) kan eventuella lokala variabler och konstanter deklareras vid behov.
 
 Motsvarande C-kod visas nedan:
 
-uint16_t add(const uint8_t x, 
-             const uint8_t y)
-{
-    return x + y;
+uint16_t add(const uint8_t x,\
+             const uint8_t y)\
+{\
+    return x + y;\
 }
 
 En procedur fungerar likt en modul i VHDL genom att denna kan inneha insignaler (in), utsignaler (out) samt kombinerade in- och utsignaler (inout).
@@ -47,21 +47,21 @@ VHDL kan motsvarande funktionalitet implementeras via en utsignal.
 
 En procedurdeklaration har följande syntax:
 
-procedure namn(variable/constant/signal arg1: in/out/inout datatyp;
+procedure namn(variable/constant/signal arg1: in/out/inout datatyp;\
                variable/constant/signal arg2: in/out/inout datatyp);
 
 Som exempel, en procedur döpt add som lagrar summan av två 8-bitars osignerade tal x och y via utsignalen sum kan deklareras enligt nedan:
 
-procedure add(constant x, y: in natural range 0 to 255;
-              signal sum   : out natural);
+procedure add(constant x, y: in natural range 0 to 255;\
+              signal sum   : out natural);\
 
 Motsvarande procedurdefinition visas nedan:
 
-procedure add(constant x, y: in natural range 0 to 255;
-              signal sum   : out natural) is
-begin
-    sum <= x + y;
-    return;      
+procedure add(constant x, y: in natural range 0 to 255;\
+              signal sum   : out natural) is\
+begin\
+    sum <= x + y;\
+    return;\      
 end procedure;
 
 I den deklarativa delen av proceduren (innan nyckelordet begin) kan eventuella lokala variabler och konstanter deklareras vid behov.
@@ -69,12 +69,12 @@ Nyckelordet return är valbart att skriva i en procedur.
 
 Motsvarande C-kod visas nedan:
 
-void add(const uint8_t x, 
-         const uint8_t y, 
-         uint16_t* sum)
-{
-    *sum = x + y;
-    return;
+void add(const uint8_t x,\
+         const uint8_t y,\
+         uint16_t* sum)\
+{\
+    *sum = x + y;\
+    return;\
 }
 
 Precis som C++ har VHDL stöd för function overloading. Därmed kan funktioner/procedurer ha samma namn så länge argumentlistan är olika. 
@@ -93,11 +93,11 @@ Precis som C++ kan funktioner/procedurer ha defaultargument. Ingående argument 
 används detta. Som exempel, funktionen add kan göras om så att om inget andra argument y passeras sker inkrementering med värdet 1. 
 Funktionen add definieras då enligt nedan:
 
-function add(constant x: natural range 0 to 255;
-             constant y: natural range 0 to 255 := 1)
-return natural is
-begin
-    return x + y;
+function add(constant x: natural range 0 to 255;\
+             constant y: natural range 0 to 255 := 1)\
+return natural is\
+begin\
+    return x + y;\
 end function;
 
 Om funktionen add anropas med första ingående argument 3 utan att passera ett andra argument så kommer därmed 3 + 1 returneras:
@@ -132,10 +132,10 @@ I den deklarativa delen av package deklareras submodulerna enligt nedan:
 
 package misc is
 
-function add(constant x, y: natural range 0 to 255)
+function add(constant x, y: natural range 0 to 255)\
 return natural;
 
-procedure add(constant x, y: in natural range 0 to 255;
+procedure add(constant x, y: in natural range 0 to 255;\
               signal sum   : out natural);
 
 end package;
@@ -144,17 +144,17 @@ I motsvarande package body definieras sedan submodulerna:
 
 package body misc is
 
-function add(constant x, y: natural range 0 to 255)
-return natural is
-begin
-    return x + y;
+function add(constant x, y: natural range 0 to 255)\
+return natural is\
+begin\
+    return x + y;\
 end function;
 
-procedure add(constant x, y: in natural range 0 to 255;
-              signal sum   : out natural) is
-begin
-    sum <= x + y;
-    return;
+procedure add(constant x, y: in natural range 0 to 255;\
+              signal sum   : out natural) is\
+begin\
+    sum <= x + y;\
+    return;\
 end procedure;
 
 end package body;
@@ -168,17 +168,17 @@ Därefter har de package som ska användas i biblioteket inkluderats via nyckelo
 med .all, annars måste allt som används föregås med namnet på package som prefix, vilket inte rekommenderas. Exempelvis kan allt innehåll i package
 std_logic_1164 samt numeric_std inkluderas via nedanstående use-direktiv:
 
-use ieee.std_logic_1164.all;
+use ieee.std_logic_1164.all;\
 use ieee.numeric_std.all;
 
 Datatyper natural och std_logic kan då deklareras direkt:
 
-signal x  : std_logic;
+signal x  : std_logic;\
 signal num: natural;
 
 Utan ändelsen all hade namnet på respektive package behövt användas som prefix, vilket visas nedan:
 
-signal x  : std_logic_1164.std_logic;
+signal x  : std_logic_1164.std_logic;\
 signal sum: numeric_std.natural;
 
 Alla .vhd-filer i aktuellt projekt lagras i det lokala biblioteket work, som inkluderas som default. 
