@@ -2,21 +2,21 @@
 -- dual_display.vhd: Module for displaying a 2-digit number with an arbitrary
 --                   radix between 2 to 16.
 --
---              Generics:
---                  - RADIX     : Parameter for selecting radix of the number 
---                                to display (default = 16).
---              Inputs:
---                  - input[7:0]: Input for selecting number to display.
---              Output:
---                  - hex1[6:0]: Displaying the most significant digit.
---                  - hex0[6:0]: Displaying the least significant digit.
+--                   Generics:
+--                       - RADIX     : Parameter for selecting radix of the
+--                                     number to display (default = 16).
+--                   Inputs:
+--                       - input[7:0]: Input for selecting number to display.
+--                   Output:
+--                      - hex1[6:0]: Displaying the most significant digit.
+--                      - hex0[6:0]: Displaying the least significant digit.
 --
---              Note: The max value at a specific radix is
---                                max_val = radix ^ 2 - 1
+--                   Note: The max value at a specific radix is
+--                                  max_val = radix ^ 2 - 1
 --              
---              So for a radix of 10, the max value is 10 ^ 2 - 1 = 99
---              and for a radix of 16, the max value is 16 ^ 2 - 1 = 255.
---              In VHDL, 10 ^ 2 is implemented as 10**2.
+--                   So for a radix of 10, the max value is 10 ^ 2 - 1 = 99
+--                   and for a radix of 16, the max value is 16 ^ 2 - 1 = 255.
+--                   In VHDL, 10 ^ 2 is implemented as 10**2.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -40,7 +40,7 @@ begin
     --------------------------------------------------------------------------------
     -- EXTRACT_DIGITS_PROCESS: Extracts the two digits out of specified number.
     --                         When the most significant digit MSD is found, the
-    --                         lease significant digit LSD is calulated as follows:
+    --                         least significant digit LSD is calulated as follows:
     --                         LSD = number - MSD * radix.
     --                         So for example, for the number 23 with a radix of 10,
     --                         MSD = 2 and LSD = 23 - 2 * 10 = 23 - 20 = 3.

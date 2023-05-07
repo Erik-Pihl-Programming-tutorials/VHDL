@@ -18,7 +18,7 @@ end entity;
 architecture behaviour of display is
 
 --------------------------------------------------------------------------------
--- Binary codes:
+-- Binary codes for displaying digits 0x0 - 0xF on hex-displays.
 --------------------------------------------------------------------------------
 constant DISPLAY_0  : std_logic_vector(6 downto 0) := "1000000";
 constant DISPLAY_1  : std_logic_vector(6 downto 0) := "1111001";
