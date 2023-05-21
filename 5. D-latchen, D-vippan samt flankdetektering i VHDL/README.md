@@ -6,7 +6,8 @@ Katalogen "d_latch" innehåller kretsschema samt VHDL-kod (syntesbar kod samt te
 
 Katalogen "d_flip_flop" innehåller kretsschema samt VHDL-kod (syntesbar kod samt testbänk) för D-vippan.
 
-Katalogen "falling_edge_detection" innehåller kretsschema samt VHDL-kod (syntesbar kod samt testbänk) för ett digitalt system, där en tryckknapp detektering för fallande flank (nedtryckning) via D-vippor. Vid nedtryckning (föregående insignal är hög, nuvarande insignal är låg) togglas en lysdiod.
+Katalogen "falling_edge_detection" innehåller kretsschema samt VHDL-kod (syntesbar kod samt testbänk) för ett digitalt system, där en tryckknapp 
+detekteras på fallande flank (nedtryckning) via D-vippor. Vid nedtryckning (föregående insignal är hög, nuvarande insignal är låg) togglas en lysdiod.
 
 Kortfattad beskrivning av latchar och vippor:
 Latchar (låskretsar) och vippor är enkla minneskretsar som kan lagra en bit. För båda kretsar kan utsignalen låsas via en enable-signal.
