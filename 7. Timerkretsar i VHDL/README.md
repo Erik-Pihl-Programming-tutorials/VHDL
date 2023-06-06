@@ -32,7 +32,6 @@ Sanningstabell för heltalsadderaren:
 |  1  |  1  |  0  |  1   |  0  |
 |  1  |  1  |  1  |  1   |  1  |
 
-Via Karnaughdiagram kan följande ekvationer härledas:
-Cout = AB + (A + B)Cin
+Via Karnaughdiagram kan följande ekvationer härledas:\
+Cout = AB + (A + B)Cin\
 sum = A ^ (B ^ Cin)
-
