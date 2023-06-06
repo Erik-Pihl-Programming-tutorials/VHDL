@@ -21,46 +21,18 @@ som kopplas som Cin på nästa heltasadderare.
 
 Sanningstabell för heltalsadderaren:
 
-A B Cin Cout sum
-0 0 0     0  0
-0 0 1     0  1
-0 1 0     0  1
-0 1 1     1  0
-1 0 0     0  1
-1 0 1     1  0
-1 1 0     1  0
-1 1 1     1  1
+|  A  |  B  | Cin | Cout | sum |
+| :-: | :-: | :-: | :-:  | :-: |
+|  0  |  0  |  0  |  0   |  0  |
+|  0  |  0  |  1  |  0   |  1  |
+|  0  |  1  |  0  |  0   |  1  |
+|  0  |  1  |  1  |  1   |  0  |
+|  1  |  0  |  0  |  0   |  1  |
+|  1  |  0  |  1  |  1   |  0  |
+|  1  |  1  |  0  |  1   |  0  |
+|  1  |  1  |  1  |  1   |  1  |
 
-
-1. Karnaugh-diagram för Cout:
-
-          Cin
-         0  1
-       --------
-    00 | 0  0 |
-AB  01 | 0  1 |
-    11 | 1  1 |
-	10 | 0  1 |
-	   --------
-	
-Cout = AB + BCin + ACin = AB + (A + B)Cin
-
-2. Karnaugh-diagram för sum:
-
-          Cin
-         0  1
-       --------
-    00 | 0  1 |
-AB  01 | 1  0 |
-    11 | 0  1 |
-	10 | 1  0 |
-	   --------
-	   
-sum = A'B'Cin + A'BCin' + AB'Cin' + ABCin = A'(B'Cin + BCin') + A(B'Cin' + BCin) = A'(B ^ Cin) + A(B ^ Cin)' = A ^ (B ^ Cin)
-	
-
-Därmed gäller att
-
+Via Karnaughdiagram kan följande ekvationer härledas:
 Cout = AB + (A + B)Cin
 sum = A ^ (B ^ Cin)
 
