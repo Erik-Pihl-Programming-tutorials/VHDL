@@ -1,4 +1,4 @@
-# Förebyggand av mestastabilitet i VHDL
+# Timerkretsar i VHDL
 Implementering av timerkretsar med valbar frekvens i VHDL.
 Också konstruktion av timerkretsar via sammankoppling av heltalsadderare* för hand i CircuitVerse.
 Implementeringen genomförs med D-vippor, både för hand i CircuitVerse samt i VHDL.
