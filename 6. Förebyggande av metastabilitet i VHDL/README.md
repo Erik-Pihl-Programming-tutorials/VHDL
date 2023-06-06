@@ -1,6 +1,6 @@
-# Förebyggand av mestastabilitet i VHDL
+# Förebyggande av mestastabilitet i VHDL
 Förebyggande av metastabilitet* via double flop metoden, dvs. samtliga insignaler synkroniseras via två vippor. 
-Kretsen som konstruerades föregående tutorial har utökats med metastabilitetsskydd. 
+Kretsen som konstruerades föregående lektion har i utökats med metastabilitetsskydd. 
 Implementeringen genomförs med D-vippor, både för hand i CircuitVerse samt i VHDL.
 
 Reset-signal synkroniseras via två D-vippor, där synkroniseras reset-signal reset_s2_n används i resten av kretsen. Postfix s2 innebär att signalen
